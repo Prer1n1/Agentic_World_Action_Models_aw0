@@ -46,3 +46,26 @@ Use PYTHONUTF8=1 and PYTHONIOENCODING=utf-8 for subsequent Python runs.
 ## Restoration limitation
 The existing aw0_setup.sh does not yet automate this complete milestone.
 Archive restoration has not been tested.
+
+## Evidence boundary
+This test verified simulator initialization, observation retrieval,
+and acceptance of a home-position command without a runtime crash.
+Visible arm movement was not verified. The arm may already have
+been near its home position. This is not an AW-0 rollout or a
+successful stacking demonstration.
+
+## Measured gripper-motion test
+Program: gripper_motion.py
+Task: stack_blocks_two; seed: 101
+
+Measured normalized left-gripper opening:
+- After open: 0.992793
+- After close: 0.002217
+- After reopen: 0.949806
+
+Sandbox failed: 0
+Combined video: 67 frames
+Reward: 0.0; task completed: false (stacking was not attempted).
+
+Conclusion: scripted gripper movement is verified through measured
+opening changes. Arm movement and AW-0 policy execution remain unverified.
